@@ -7,7 +7,7 @@
 
         1. TouchableHighlight  { 
             - can be used for Views that have visible bounce on screen or the buttons with filled colors
-             e.g. primary buttons of JAR
+             e.g. primary buttons
             - so that component highlights when we tap on it.
         }
 
@@ -151,7 +151,7 @@
             - react native gesture handler
                     1. The ability to define relations between gesture handlers, 
                             e.g. when you have a pan handler in ScrollView you can make that ScrollView wait until it knows pan won't recognize.
-                            
+
                     2. A way to use a platform's native touch handling system for recognizing pinch, rotation and pan (besides a few other gestures)
 
                     3. Mechanisms to use touchables that run in native thread and follow platform default behavior;
