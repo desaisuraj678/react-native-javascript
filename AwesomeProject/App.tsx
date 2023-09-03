@@ -16,30 +16,32 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+import SpotifyMyPlaylist from './src/features/animations/spotify_my_playlist/ui/SpotifyMyPlaylist';
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
-
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex: 1,
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={{flex:1}}>
+    <GestureHandlerRootView style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-     
+      <SpotifyMyPlaylist />
+    </GestureHandlerRootView>
     </SafeAreaView>
   );
 }
