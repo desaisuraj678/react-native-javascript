@@ -34,7 +34,7 @@ function App(): JSX.Element {
   };
 
   return (
-    <SafeAreaView style={{flex:1}}>
+    <View style={{flex:1}}>
     <GestureHandlerRootView style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
@@ -42,7 +42,7 @@ function App(): JSX.Element {
       />
       <SpotifyMyPlaylist />
     </GestureHandlerRootView>
-    </SafeAreaView>
+    </View>
   );
 }
 

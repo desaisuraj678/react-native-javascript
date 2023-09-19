@@ -145,84 +145,86 @@ function SpotifyMyPlaylist() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Animated.View
-        style={[
-          {position: 'absolute', top: headerMarginTop},
-          animatedInputStyle,
-        ]}>
-        <TextInput
-          style={{
-            width: screenWidth - 32,
-            height: headerHeight,
-            backgroundColor: '#a16a5c',
-            borderRadius: 4,
-            alignSelf: 'center',
-          }}></TextInput>
-      </Animated.View>
-      <Animated.View style={[animatedContainerStyle]}>
-        <Animated.Image
-          source={require('../../../../resources/sp_song.png')}
-          style={[
-            {
-              top: animatedImgTop,
-              position: 'absolute',
-              alignSelf: 'center',
-              zIndex: -1,
-            },
-            animatedImgStyle,
-          ]}
-        />
-      </Animated.View>
-
-      <Animated.ScrollView
-        onScroll={onScrollHandler}
-        ref={scrollViewRef}
-        bounces={true}
-        decelerationRate={'normal'}
-        onMomentumScrollBegin={onMomentumScrollBegin}
-        onMomentumScrollEnd={onMomentumScrollEnd}
-        onScrollBeginDrag={onDragBegin}
-        onScrollEndDrag={onDragEnd}
-        contentContainerStyle={{alignItems: 'center', width: screenWidth}}
-        scrollEventThrottle={1}>
+    // <View style={styles.container}>
+      <SafeAreaView style={styles.safeAreaContainer}>
         <Animated.View
           style={[
-            {
-              paddingTop:
-                imgMarginTop +
-                imgSize +
-                bottomPadding +
-                headerMarginTop +
-                headerHeight,
-            },
+            {position: 'absolute', top: headerMarginTop},
+            animatedInputStyle,
           ]}>
-          <Text
+          <TextInput
             style={{
-              paddingHorizontal: 16,
-              color: 'white',
-              fontSize: 20,
-              fontWeight: '700',
-            }}>
-            Punjabi songs
-          </Text>
-          <View style={{marginTop: 32}}>
-            {content.map((_, index) => {
-              return (
-                <View
-                  key={index}
-                  style={{
-                    width: screenWidth,
-                    height: 60,
-                    backgroundColor: '#171211',
-                  }}
-                />
-              );
-            })}
-          </View>
+              width: screenWidth - 32,
+              height: headerHeight,
+              backgroundColor: '#a16a5c',
+              borderRadius: 4,
+              alignSelf: 'center',
+            }}></TextInput>
         </Animated.View>
-      </Animated.ScrollView>
-    </SafeAreaView>
+        <Animated.View style={[animatedContainerStyle]}>
+          <Animated.Image
+            source={require('../../../../resources/sp_song.png')}
+            style={[
+              {
+                top: animatedImgTop,
+                position: 'absolute',
+                alignSelf: 'center',
+                zIndex: -1,
+              },
+              animatedImgStyle,
+            ]}
+          />
+        </Animated.View>
+
+        <Animated.ScrollView
+          onScroll={onScrollHandler}
+          ref={scrollViewRef}
+          bounces={true}
+          decelerationRate={'normal'}
+          onMomentumScrollBegin={onMomentumScrollBegin}
+          onMomentumScrollEnd={onMomentumScrollEnd}
+          onScrollBeginDrag={onDragBegin}
+          onScrollEndDrag={onDragEnd}
+          contentContainerStyle={{alignItems: 'center', width: screenWidth}}
+          scrollEventThrottle={1}>
+          <Animated.View
+            style={[
+              {
+                top:
+                  imgMarginTop +
+                  imgSize +
+                  bottomPadding +
+                  headerMarginTop +
+                  headerHeight,
+              },
+            ]}>
+            <Text
+              style={{
+                paddingHorizontal: 16,
+                color: 'white',
+                fontSize: 20,
+                fontWeight: '700',
+              }}>
+              Punjabi songs
+            </Text>
+            <View style={{marginTop: 32}}>
+              {content.map((_, index) => {
+                return (
+                  <View
+                    key={index}
+                    style={{
+                      width: screenWidth,
+                      height: 60,
+                      backgroundColor: '#171211',
+                    }}
+                  />
+                );
+              })}
+            </View>
+          </Animated.View>
+        </Animated.ScrollView>
+      </SafeAreaView>
+    // </View>
   );
 }
 
@@ -234,4 +236,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#96452f',
     alignItems: 'center',
   },
+  safeAreaContainer:{
+    flex: 1,
+    backgroundColor: 'red',
+    alignItems: 'center',
+  }
 });

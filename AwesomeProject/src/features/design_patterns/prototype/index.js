@@ -48,6 +48,8 @@ const dog = {
    
 const pet1 = Object.create(dog);
 
+// pet1.__proto__ = dog
+
 /*
 ---- Whenever we try to access a property on an object that doesn't
 exist on the object directly, JavaScript will go down the prototype chain
