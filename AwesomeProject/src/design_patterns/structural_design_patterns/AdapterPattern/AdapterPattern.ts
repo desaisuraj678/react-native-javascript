@@ -32,7 +32,7 @@ class StripeProcessor { // this is called adaptee as well
 
 // hence we make adapter which implements old interface PaymentProcessor because client understands PaymentProcessor interface only
 class StripeProcessorAdapter implements PaymentProcessor { // this is adapter
-    private stripeProcessor: StripeProcessor;  
+    private stripeProcessor: StripeProcessor;  // pass adaptee to adapter (adaptee is new class)
 
     constructor(stripeProcessor: StripeProcessor) {
         this.stripeProcessor = stripeProcessor;  // and we pass new class to the adapter while creating instance
