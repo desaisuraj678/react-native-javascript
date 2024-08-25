@@ -22,7 +22,7 @@ Observer lets receivers dynamically subscribe to and unsubscribe from receiving 
 
 interface Colleague {
   placeBid(amount: number): boolean;
-  receiveBidNotification(amount: number,bidFrom:string): void;
+  receiveBidNotification(amount: number, bidFrom: string): void;
   getName(): string;
 }
 
@@ -40,8 +40,15 @@ class Bidder implements Colleague {
     return true;
   }
 
-  receiveBidNotification(amount: number,bidFrom:string): void {
-    console.log('I am ', this.getName()," Bid is from ", bidFrom, " Of amount ", amount);
+  receiveBidNotification(amount: number, bidFrom: string): void {
+    console.log(
+      'I am ' +
+        this.getName() +
+        ' Bid is from ' +
+        bidFrom +
+        ' Of amount ' +
+        amount,
+    );
   }
 
   getName(): string {
@@ -64,17 +71,16 @@ class Auction implements AuctionMediator {
   placeBid(bidder: Colleague, amount: number): void {
     for (let collegue of this.colleagues) {
       if (collegue.getName() != bidder.getName()) {
-        collegue.receiveBidNotification(amount,bidder.getName()); // call methods of Collegues from Mediator
+        collegue.receiveBidNotification(amount, bidder.getName()); // call methods of Collegues from Mediator
       }
     }
   }
 }
 
-
 const auction = new Auction();
-const bidder1 = new Bidder("suraj",auction)
-const bidder2 = new Bidder("ramu",auction)
-const bidder3 = new Bidder("chomu",auction)
+const bidder1 = new Bidder('suraj', auction);
+const bidder2 = new Bidder('ramu', auction);
+const bidder3 = new Bidder('chomu', auction);
 
 bidder1.placeBid(200);
 // bidder2.placeBid(330);
