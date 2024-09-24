@@ -37,24 +37,7 @@ class BaseNotification implements INotification {
     }
 }
 
-//  The base Decorator class follows the same interface as the other components
-class Decorator implements INotification {
-    protected notification: INotification;
-
-    constructor(notification: INotification) {
-        this.notification = notification;
-    }
-
-    /**
-     * The Decorator delegates all work to the wrapped component.
-     */
-    public send(message: string): void {
-        return this.notification.send(message);
-    }
-}
-
-
-// Step 3: Create Decorator Classes
+// Step 3: Create Decorator Classes (Base decorator class)
 abstract class NotificationDecorator implements INotification {
     protected notification: INotification;
 

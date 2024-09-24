@@ -123,6 +123,19 @@ class Display {
     }
 }
 
+
+class Door {
+    private status: DoorState;
+
+    constructor(status: DoorState) {
+        this.status = status;
+    }
+
+    isOpen(): boolean {
+        return this.status === DoorState.OPEN;
+    }
+}
+
 class ElevatorCar {
     private id: number;
     private door: DoorState;
@@ -150,19 +163,6 @@ class ElevatorCar {
 }
 
 
-class Door {
-    private status: DoorState;
-
-    constructor(status: DoorState) {
-        this.status = status;
-    }
-
-    isOpen(): boolean {
-        return this.status === DoorState.OPEN;
-    }
-}
-
-
 class Floor {
     private display: Display[];
     private panel: HallPanel[];
@@ -186,12 +186,12 @@ class Floor {
 
 class Building {
     private static building: Building | null = null; // Singleton instance
-    private floor: Floor[];
-    private elevator: ElevatorCar[];
+    private floors: Floor[];
+    private elevators: ElevatorCar[];
 
     private constructor() {
-        this.floor = new Array<Floor>();
-        this.elevator = new Array<ElevatorCar>();
+        this.floors = new Array<Floor>();
+        this.elevators = new Array<ElevatorCar>();
     }
 
     // Static method to access the singleton instance of Building class
