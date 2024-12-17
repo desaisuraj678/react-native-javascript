@@ -419,7 +419,7 @@ class Search {
     }
 }
 
-class Catalog extends Search {
+class Catalog extends Search { // the seach and catalog is similar in many questions (eg. Movie ticket booking)
     private bookTitles: Map<string, LMSBook[]>;
     private bookAuthors: Map<string, LMSBook[]>;
     private bookSubjects: Map<string, LMSBook[]>;

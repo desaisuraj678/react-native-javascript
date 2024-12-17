@@ -6,8 +6,8 @@ const counter = {
   },
   decrement() {
     return --count;
-  }
+  },
 };
 
 Object.freeze(counter);
-export { counter };
+export {counter};

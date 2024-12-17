@@ -485,37 +485,13 @@ PODS:
     - React-jsi (= 0.72.3)
     - React-logger (= 0.72.3)
     - React-perflogger (= 0.72.3)
-  - RNGestureHandler (2.12.1):
+  - RNGestureHandler (2.17.1):
+    - RCT-Folly (= 2021.07.22.00)
     - React-Core
-  - RNReanimated (3.4.2):
-    - DoubleConversion
-    - FBLazyVector
-    - glog
-    - hermes-engine
-    - RCT-Folly
-    - RCTRequired
-    - RCTTypeSafety
-    - React-callinvoker
+  - RNReanimated (3.13.0):
+    - RCT-Folly (= 2021.07.22.00)
     - React-Core
-    - React-Core/DevSupport
-    - React-Core/RCTWebSocket
-    - React-CoreModules
-    - React-cxxreact
-    - React-hermes
-    - React-jsi
-    - React-jsiexecutor
-    - React-jsinspector
-    - React-RCTActionSheet
-    - React-RCTAnimation
-    - React-RCTAppDelegate
-    - React-RCTBlob
-    - React-RCTImage
-    - React-RCTLinking
-    - React-RCTNetwork
-    - React-RCTSettings
-    - React-RCTText
     - ReactCommon/turbomodule/core
-    - Yoga
   - SocketRocket (0.6.1)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -741,12 +717,12 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 837c1bebd2f84572db17698cd702ceaf585b0d9a
   React-utils: bcb57da67eec2711f8b353f6e3d33bd8e4b2efa3
   ReactCommon: 3ccb8fb14e6b3277e38c73b0ff5e4a1b8db017a9
-  RNGestureHandler: c0d04458598fcb26052494ae23dda8f8f5162b13
-  RNReanimated: 726395a2fa2f04cea340274ba57a4e659bc0d9c1
+  RNGestureHandler: bbb8e17b10afdafc5cc5746e8f60772236e7e2ca
+  RNReanimated: 3890c905a5753fafcfd3a97a164bf9a063c18c81
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 8796b55dba14d7004f980b54bcc9833ee45b28ce
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
 PODFILE CHECKSUM: b8b030b7bce7d37d6aac59b65ac22532491c35c0
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.15.2
