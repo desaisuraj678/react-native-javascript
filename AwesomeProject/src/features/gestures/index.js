@@ -136,6 +136,9 @@
                     or in other terms both of these recognizers will listen for the gesture callbacks and we wont be able to figure out which one to trigger which will make 
                         recognizers unpredicatble
 
+                Imp::: "The gesture responder system is not compatible with the native gesture recognizers used by components like ScrollView,
+                       Slider, etc. If you need to use these components together, [you may need to implement custom logic to coordinate gestures.]"
+
                 Imp :::: 
                         -> if we have both the components in js responder system we will be able to negotiate which component will receive the callback
                         -> but unfortunately this is not the case if both of them in native geture recognizers 
@@ -156,6 +159,39 @@
 
                     3. Mechanisms to use touchables that run in native thread and follow platform default behavior;
                      e.g. in the event they are in a scrollable component, turning into pressed state is slightly delayed to prevent it from highlighting when you fling
+
+
+
+
+/****
+ 
+ *****************     Limitations of React Native Animated       *************
+IMP useNativeDriver Limitations:
+
+Not All Properties Support useNativeDriver:
+Only a subset of properties can be animated with useNativeDriver: true. These include:
+
+- transform (e.g., translateX, translateY, scale, rotate)
+- opacity
+- backgroundColor (limited support)
+
+Properties like 
+        width, height, top, left, and flex 
+        cannot be animated with useNativeDriver: true. Attempting to do so will result in a warning or error.
+
+Fallback to JS Thread:
+If useNativeDriver: true is not supported for a property, the animation will fall back to the JavaScript thread, which can cause performance issues, especially for complex animations.
+ * 
+
+ 
+
+********************** Shared Values and Cross-Component Animations:
+
+- Shared Values:
+        Animated does not support shared animated values across multiple components natively. This makes it difficult to synchronize animations between components.
+- Cross-Component Animations:
+        Animating multiple components in sync (e.g., a shared progress bar) is challenging with Animated.
+ */
 
         
 

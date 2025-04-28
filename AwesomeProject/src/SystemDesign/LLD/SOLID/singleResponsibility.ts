@@ -12,24 +12,19 @@ class Marker {
 
 class Invoice1 {
   marker: Marker;
-  quantity: number
-  constructor(marker: Marker,quantity: number) {
+  quantity: number;
+  constructor(marker: Marker, quantity: number) {
     this.marker = marker;
-    this.quantity = quantity
+    this.quantity = quantity;
   }
-  calculatePrice():number {
-    return this.quantity * this.marker.price
+  calculatePrice(): number {
+    return this.quantity * this.marker.price;
   }
 
-  saveToDB(){
+  saveToDB() {}
 
-  }
-  
-  generateInvoice(){
-
-  }
+  generateInvoice() {}
 }
-
 
 /*
 
@@ -38,40 +33,37 @@ But also if there is change in saveToDB or generateInvoice then also we have to 
 - Single responsibilty principle tells that there should be only one reason to change the class and only one responsibility
 */
 
-
 // solution : as saving to db and invoice genrating pr printing are completely different tasks and can be seperated
 
-
 class Invoice2 {
-    marker: Marker;
-    quantity: number
-    constructor(marker: Marker,quantity: number) {
-      this.marker = marker;
-      this.quantity = quantity
-    }
-    calculatePrice():number { // only one responsibilty
-      return this.quantity * this.marker.price
-    }
-
+  marker: Marker;
+  quantity: number;
+  constructor(marker: Marker, quantity: number) {
+    this.marker = marker;
+    this.quantity = quantity;
+  }
+  calculatePrice(): number {
+    // only one responsibilty
+    return this.quantity * this.marker.price;
+  }
 }
 
 class InvoiceDao {
-    invoice: Invoice2
-    constructor(invoice:Invoice2){
-        this.invoice = invoice
-    }
-    saveToDB(){
-        console.log("saved")
-    }
+  invoice: Invoice2;
+  constructor(invoice: Invoice2) {
+    this.invoice = invoice;
+  }
+  saveToDB() {
+    console.log('saved');
+  }
 }
 
-
 class InvoicePrinter {
-    invoice: Invoice2
-    constructor(invoice:Invoice2){
-        this.invoice = invoice
-    }
-    generateInvoice(){
-        console.log("invoice generated")
-    }
+  invoice: Invoice2;
+  constructor(invoice: Invoice2) {
+    this.invoice = invoice;
+  }
+  generateInvoice() {
+    console.log('invoice generated');
+  }
 }
